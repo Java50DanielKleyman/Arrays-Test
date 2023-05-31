@@ -24,6 +24,35 @@ public class ArraysTest {
 	}
 
 	@Test
+	void binarySearchTest() {
+		int[] src = { 1, 2, 3, 4, 5, 6, 7 };
+		assertEquals(-1, Arrays.binarySearch(src, 0));
+		assertEquals(-8, Arrays.binarySearch(src, 10));
+		assertEquals(2, Arrays.binarySearch(src, 3));
+	}
+
+	@Test
+	void insertSortedTest() {
+		// 3 test - in the beginning, end and middle
+		int[] src = { 1, 2, 3, 5, 6, 7 };
+		int[] expected1 = { -5, 1, 2, 3, 5, 6, 7 };
+		assertArrayEquals(expected1, ArraysInt.insertNumberSort(src, -5));
+		int[] expected2 = { 1, 2, 3, 4, 5, 6, 7 };
+		assertArrayEquals(expected2, ArraysInt.insertNumberSort(src, 4));
+		int[] expected3 = { 1, 2, 3, 3, 5, 6, 7 };
+		assertArrayEquals(expected3, ArraysInt.insertNumberSort(src, 3));
+		int[] expected4 = { 1, 2, 3, 5, 6, 7, 10 };
+		assertArrayEquals(expected4, ArraysInt.insertNumberSort(src, 10));
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	@Test
 	void initialTest() {
 		int[] ar1 = { 1, 2, 3 };
 		int[] ar2 = { 1, 2, 3 };
@@ -81,14 +110,4 @@ public class ArraysTest {
 		assertArrayEquals(expected3, ArraysInt.insertNumber(src, index, number));
 	}
 
-	@Test
-	void binarySearchTest() {
-		// TODO test for understanding the standard method Array.binarySearch
-		// (int[]arraySorted, int key)
-	}
-
-	@Test
-	void insertSortedTest() {
-		// 3 test - in the beginning, end and middle
-	}
 }
