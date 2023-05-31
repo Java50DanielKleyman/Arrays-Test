@@ -10,6 +10,20 @@ import java.util.Arrays;
 
 public class ArraysTest {
 	@Test
+	void removeNumberTest() {
+		int[] src = { 1, 2, 3, 4, 5, 6, 7 };
+		int index = 3;
+		int[] expected1 = { 1, 2, 3, 5, 6, 7 };
+		assertArrayEquals(expected1, ArraysInt.removeNumber(src, index));
+		index = 0;
+		int[] expected2 = { 2, 3, 4, 5, 6, 7 };
+		assertArrayEquals(expected2, ArraysInt.removeNumber(src, index));
+		index = 6;
+		int[] expected3 = { 1, 2, 3, 4, 5, 6 };
+		assertArrayEquals(expected3, ArraysInt.removeNumber(src, index));
+	}
+
+	@Test
 	void initialTest() {
 		int[] ar1 = { 1, 2, 3 };
 		int[] ar2 = { 1, 2, 3 };
@@ -68,13 +82,11 @@ public class ArraysTest {
 	}
 
 	@Test
-	void removeNumberTest() {
-
-	}
-	@Test
 	void binarySearchTest() {
-		//TODO test for understanding the standard method Array.binarySearch (int[]arraySorted, int key)
+		// TODO test for understanding the standard method Array.binarySearch
+		// (int[]arraySorted, int key)
 	}
+
 	@Test
 	void insertSortedTest() {
 		// 3 test - in the beginning, end and middle
