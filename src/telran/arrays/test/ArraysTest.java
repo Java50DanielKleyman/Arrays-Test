@@ -9,6 +9,18 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Arrays;
 public class ArraysTest {
+	@Test
+	void binary1SearchTest() {
+		int [] expected1 = {-1, -1, 1 ,2, 2, 3, 3, 3, 4, 5, 6, 7, 7};
+		assertEquals(11, ArraysInt.binarySearch(expected1, 8));
+		}
+	
+	
+	
+	
+	
+	
+	
 @Test
 void initialTest() {
 	int [] ar1 = {1, 2, 3};
